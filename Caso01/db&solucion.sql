@@ -65,3 +65,17 @@ VALUES
 ('C050', '2025-01-29', 300.00);
 
 
+WITH clientes AS (
+    SELECT 
+        cliente_id,
+        SUM(monto) AS total_cliente,
+        NTILE(10) OVER (ORDER BY SUM(monto) DESC) AS decil
+    FROM ventas
+    GROUP BY cliente_id
+)
+SELECT 
+    ROUND(100.0 * SUM(CASE WHEN decil = 1 THEN total_cliente END) / SUM(total_cliente), 2) AS pct_top10
+FROM clientes;
+
+
+
