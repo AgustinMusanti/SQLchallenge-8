@@ -1,0 +1,22 @@
+Consigna: Retención de clientes con CTE (SQL Server)
+
+Contexto
+
+Tenés una tabla de ventas con compras de agosto y septiembre de 2025. 
+Queremos medir retención: qué porcentaje de clientes que compraron en agosto también compraron en septiembre.
+
+Requisitos
+
+Implementar la lógica con CTEs (mínimo un CTE intermedio).
+
+La salida debe ser una sola fila con exactamente las 4 columnas indicadas.
+
+TasaRetencionPct debe mostrarse con dos decimales.
+
+Dialecto: SQL Server (T-SQL).
+
+Parámetros (opcional)
+
+Hacer la solución parametrizable permitiendo definir los meses a comparar
+
+@mes1 y @mes2 en formato 'YYYY-MM' (por ejemplo, '2025-08' y '2025-09').
